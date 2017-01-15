@@ -37,16 +37,16 @@ public class JdbcConfig {
     @Bean
     @Profile("dev")
     public DataSource dataSourceDev(){
-        DriverManagerDataSource dataSource = new DriverManagerDataSource("jdbc:sqlite:gws.db");
+        DriverManagerDataSource dataSource = new DriverManagerDataSource("jdbc:mysql://localhost:3306/gws","root","r00t");
 
-        dataSource.setDriverClassName("org.sqlite.JDBC");
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         return dataSource;
     }
 
     @Bean
     @Profile("test")
     public DataSource dataSourceTest(){
-        DriverManagerDataSource dataSource = new DriverManagerDataSource("localhost/test","root","");
+        DriverManagerDataSource dataSource = new DriverManagerDataSource("jdbc:mysql://localhost:3306/gws_test","root","r00t");
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         return dataSource;
     }
