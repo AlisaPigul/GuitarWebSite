@@ -1,5 +1,4 @@
-target/*
+backend/target/*
 .idea/*
 *.iml
-web/WEB-INF/lib
-web/WEB-INF/classes
+frontend/node_modules/*
