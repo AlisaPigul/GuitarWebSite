@@ -1,7 +1,7 @@
 package org.laptech.gws.service.impl;
 
 import org.laptech.gws.data.User;
-import org.laptech.gws.data.dao.UserDAO;
+import org.laptech.gws.data.repository.UserRepository;
 import org.laptech.gws.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,11 +15,11 @@ import java.util.List;
 public class UserServiceImpl implements UserService{
 
     @Autowired
-    UserDAO userDAO;
+    UserRepository userRepository;
 
     @Override
     public List<User> getUsers() {
-        return userDAO.getUsers();
+        return userRepository.findAll();
     }
 
     @Override

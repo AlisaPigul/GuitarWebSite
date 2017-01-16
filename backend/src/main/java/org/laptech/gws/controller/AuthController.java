@@ -18,13 +18,13 @@ public class AuthController {
 
     //TODO change insecure password transfer
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public void login(@RequestParam("login") String login,@RequestParam("password") String password){
-        authService.login(login,password);
+    public String login(@RequestParam("login") String login,@RequestParam("password") String password){
+        return authService.login(login,password);
     }
 
     @RequestMapping(value = "/register",method = RequestMethod.POST)
-    public void register(@RequestParam("login") String login,@RequestParam("password") String password){
-        authService.register(login,password);
+    public String register(@RequestParam("login") String login,@RequestParam("password") String password){
+        return authService.register(login,password);
     }
 
 }
