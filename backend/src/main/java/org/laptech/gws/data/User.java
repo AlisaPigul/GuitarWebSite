@@ -1,5 +1,6 @@
 package org.laptech.gws.data;
 
+
 import java.util.Date;
 
 /**
@@ -18,15 +19,6 @@ public class User {
     private double rate;
     private Date registrationDate;
     private double lastLogin;
-
-    public User() {
-    }
-
-    public User(long id, String login, String password) {
-        this.id = id;
-        this.login = login;
-        this.password = password;
-    }
 
     public long getId() {
         return id;
@@ -117,10 +109,42 @@ public class User {
     }
 
     @Override
-    public String toString() {
-        return "User{" +
-                "login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        User user = (User) o;
+
+        if (id != user.id) return false;
+        if (Double.compare(user.rate, rate) != 0) return false;
+        if (Double.compare(user.lastLogin, lastLogin) != 0) return false;
+        if (login != null ? !login.equals(user.login) : user.login != null) return false;
+        if (password != null ? !password.equals(user.password) : user.password != null) return false;
+        if (name != null ? !name.equals(user.name) : user.name != null) return false;
+        if (surname != null ? !surname.equals(user.surname) : user.surname != null) return false;
+        if (role != user.role) return false;
+        if (group != user.group) return false;
+        if (email != null ? !email.equals(user.email) : user.email != null) return false;
+        return registrationDate != null ? registrationDate.equals(user.registrationDate) : user.registrationDate == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = (int) (id ^ (id >>> 32));
+        result = 31 * result + (login != null ? login.hashCode() : 0);
+        result = 31 * result + (password != null ? password.hashCode() : 0);
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (surname != null ? surname.hashCode() : 0);
+        result = 31 * result + (role != null ? role.hashCode() : 0);
+        result = 31 * result + (group != null ? group.hashCode() : 0);
+        result = 31 * result + (email != null ? email.hashCode() : 0);
+        temp = Double.doubleToLongBits(rate);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (registrationDate != null ? registrationDate.hashCode() : 0);
+        temp = Double.doubleToLongBits(lastLogin);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
     }
 }

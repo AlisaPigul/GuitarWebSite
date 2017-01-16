@@ -21,4 +21,10 @@ public class AuthController {
     public void login(@RequestParam("login") String login,@RequestParam("password") String password){
         authService.login(login,password);
     }
+
+    @RequestMapping(value = "/register",method = RequestMethod.POST)
+    public void register(@RequestParam("login") String login,@RequestParam("password") String password){
+        authService.register(login,password);
+    }
+
 }

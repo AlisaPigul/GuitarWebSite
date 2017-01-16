@@ -13,18 +13,13 @@ import javax.annotation.PostConstruct;
  */
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
-    @Value("${connection.username}")
-    String value;
+
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
         return builder.sources(Application.class);
     }
 
 
-    @PostConstruct
-    public void test(){
-        System.out.println(value);
-    }
     public static void main(String[] args) {
         SpringApplication.run(Application.class,args);
     }

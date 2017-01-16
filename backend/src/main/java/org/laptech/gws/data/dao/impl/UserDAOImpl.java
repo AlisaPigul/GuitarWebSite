@@ -1,10 +1,11 @@
-package org.laptech.gws.data.repositories.impl;
+package org.laptech.gws.data.dao.impl;
 
 import org.laptech.gws.constants.db.SqlQueries;
 import org.laptech.gws.data.User;
-import org.laptech.gws.data.repositories.UserRepository;
+import org.laptech.gws.data.dao.UserDAO;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
@@ -17,11 +18,11 @@ import java.util.Optional;
  * @author rlapin on 12/13/16.
  */
 @Component
-public class UserRepositoryImpl implements UserRepository {
+public class UserDAOImpl implements UserDAO {
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
     @Autowired
-    Logger logger;
+    private Logger logger;
 
     @Override
     public List<User> getUsers() {
@@ -33,29 +34,33 @@ public class UserRepositoryImpl implements UserRepository {
     /**
      * Convert resultset from db query into entity
      * @param resultSet
-     * @return
+     * @return User entity
      */
     private User resultSetToUser(ResultSet resultSet){
         User user;
         try {
             user = new User();
             user.setLogin(resultSet.getString("login"));
-            user.setId(resultSet.getLong("id"));
 
         }catch (SQLException e){
             logger.error(e.toString());
             return new User();
+
         }
         return user;
     }
 
     @Override
     public void addUser(User user) {
-
+        jdbcTemplate.update(SqlQueries.INSERT_USER_WITH_LOGIN, user.getName(),user.getPassword());
     }
 
     @Override
     public Optional<User> getUser(String login) {
-        return jdbcTemplate.queryForObject(SqlQueries.SELECT_USER_WITH_LOGIN,new Object[]{login},(resultSet, i) -> Optional.of(resultSetToUser(resultSet)));
+        try {
+            return jdbcTemplate.queryForObject(SqlQueries.SELECT_USER_WITH_LOGIN, new Object[]{login}, (resultSet, i) -> Optional.of(resultSetToUser(resultSet)));
+        }catch(EmptyResultDataAccessException exception){
+            return Optional.empty();
+        }
     }
 }

@@ -37,10 +37,12 @@ public class JdbcConfig {
     @Bean
     @Profile("dev")
     public DataSource dataSourceDev(){
-        DriverManagerDataSource dataSource = new DriverManagerDataSource("jdbc:mysql://localhost:3306/gws","root","r00t");
+      /*  DriverManagerDataSource dataSource = new DriverManagerDataSource("jdbc:mysql://localhost:3306/gws","root","r00t");
 
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        return dataSource;
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");*/
+        EmbeddedDatabaseBuilder databaseBuilder = new EmbeddedDatabaseBuilder();
+
+        return databaseBuilder.setType(EmbeddedDatabaseType.H2).addScript("schema.sql").build();
     }
 
     @Bean

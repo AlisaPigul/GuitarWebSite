@@ -1,8 +1,8 @@
 package org.laptech.gws.service.impl;
 
-import org.laptech.gws.controller.UserController;
 import org.laptech.gws.data.User;
-import org.laptech.gws.data.repositories.UserRepository;
+import org.laptech.gws.data.dao.UserDAO;
+import org.laptech.gws.exceptions.UserAlreadyExistsException;
 import org.laptech.gws.exceptions.UserNotExistsException;
 import org.laptech.gws.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,16 +19,31 @@ import java.security.NoSuchAlgorithmException;
 public class AuthServiceImpl implements AuthService{
 
     @Autowired
-    UserRepository userRepository;
+    UserDAO userDAO;
 
     @Override
     public String login(String login, String password) {
-        User user = userRepository.getUser(login).orElseThrow(UserNotExistsException::new);
+        User user = userDAO.getUser(login).orElseThrow(UserNotExistsException::new);
         if(user.getPassword()!=null && user.getPassword().equals(doDigest(password))){
 
         }
         return null;
     }
+
+
+
+
+    @Override
+    public String register(String login, String password) {
+        if(userDAO.getUser(login).isPresent()) throw new UserAlreadyExistsException();
+        User user = new User();
+        user.setLogin(login);
+        user.setPassword(doDigest(password));
+        userDAO.addUser(user);
+        return "";
+    }
+
+
 
     private String doDigest(String password) {
         try {

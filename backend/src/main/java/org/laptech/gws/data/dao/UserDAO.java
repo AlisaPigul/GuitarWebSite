@@ -1,4 +1,4 @@
-package org.laptech.gws.data.repositories;
+package org.laptech.gws.data.dao;
 
 import org.laptech.gws.data.User;
 
@@ -9,7 +9,7 @@ import java.util.Optional;
  * UserDAO
  * @author rlapin on 12/13/16.
  */
-public interface UserRepository {
+public interface UserDAO {
     List<User> getUsers();
 
     void addUser(User user);
