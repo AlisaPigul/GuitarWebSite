@@ -2,6 +2,7 @@ package org.laptech.gws.data;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author rlapin
@@ -16,8 +17,8 @@ public class Song {
 
     private String title;
     private String artist;
-    @OneToMany(mappedBy = "name")
-    private List<Genre> genre;
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "name")
+    private Set<Genre> genre;
 
 
     @OneToOne
@@ -25,6 +26,6 @@ public class Song {
 
     @OneToOne
     private Chords stableChords;
-    @OneToMany
+    @OneToMany(mappedBy = "id",cascade = CascadeType.ALL)
     private List<Chords> allChords;
 }
