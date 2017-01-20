@@ -11,7 +11,7 @@ import java.util.Optional;
  * UserDAO
  * @author rlapin on 12/13/16.
  */
-public interface UserRepository extends CrudRepository<User,Long> {
+public interface UserRepository extends JpaRepository<User,Long> {
 
     List<User> findAll();
     User getUserByLogin(String login);
