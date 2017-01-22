@@ -7,4 +7,12 @@ import java.util.List;
  */
 public class SongLine {
     private List<SongItem> items;
+
+    public List<SongItem> getItems() {
+        return items;
+    }
+
+    public void setItems(List<SongItem> items) {
+        this.items = items;
+    }
 }

@@ -9,7 +9,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
  * @author rlapin
  */
 @RepositoryRestResource(path = "chords",collectionResourceRel = "chords")
-@PreAuthorize("hasRole('ROLE_ADMIN')")
 public interface ChordsRepository extends MongoRepository<Chords,Long> {
 
 }

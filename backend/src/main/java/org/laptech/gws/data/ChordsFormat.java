@@ -9,4 +9,13 @@ import java.util.List;
  */
 public class ChordsFormat {
     private List<SongPart> parts;
+
+    public List<SongPart> getParts() {
+        return parts;
+    }
+
+    public void setParts(List<SongPart> parts) {
+        this.parts = parts;
+    }
+
 }

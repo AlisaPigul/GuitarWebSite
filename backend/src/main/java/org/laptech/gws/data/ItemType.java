@@ -5,5 +5,5 @@ package org.laptech.gws.data;
  * @author rlapin
  */
 public enum ItemType {
-    PAUSE,CHORD,CHORDS_REPEAT, TABS,
+    PAUSE,CHORD,CHORDS_REPEAT, TABS, LYRICS, CHORDS_SET,
 }
