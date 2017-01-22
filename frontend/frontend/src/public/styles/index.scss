@@ -58,7 +58,7 @@ body{
         align-items: center;
         background: #000;
         justify-content: flex-end;
-        height:5vh;
+        height:9vh;
         .search-field{
             flex: 1;
 
@@ -74,20 +74,90 @@ body{
         }
         .icon{
             display:inline-block;
-            line-height: 5vh;
-            width:5vh;
-            height:5vh;
+            line-height: 7vh;
+            width:9vh;
+            height:9vh;
             cursor: pointer;
 
             &.search-icon{
                 background: url("images/search.png"), rgba(1, 2, 3, 0.82);
-                background-size: 4vh;
+                background-size: 6vh;
+                background-repeat: no-repeat,no-repeat;
+                background-position: center;
+            }
+            &.search-tab{
+                background: url("images/music_note.png"), rgba(1, 2, 3, 0.82);
+                background-size: 6vh;
+                background-repeat: no-repeat,no-repeat;
+                background-position: center;
+                position: relative;
+                display: inline-block;
+
+                .tooltiptext {
+                    visibility: hidden;
+                    width: 120px;
+                    background-color: #555;
+                    color: #fff;
+                    text-align: center;
+                    border-radius: 6px;
+                    padding: 5px 0;
+                    position: absolute;
+                    z-index: 1;
+                    bottom: 125%;
+                    left: 50%;
+                    margin-left: -60px;
+                    opacity: 0;
+                    transition: opacity 1s;
+                }
+
+                .tooltiptext::after {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: #555 transparent transparent transparent;
+                }
+            }
+            &.search-tab:hover .tooltiptext {
+                visibility: visible;
+                opacity: 1;
+            }
+            &.tags-icon{
+                background: url("images/golden_star.png"), rgba(1, 2, 3, 0.82);
+                background-size: 6vh;
+                background-repeat: no-repeat,no-repeat;
+                background-position: center;
+            }
+            &.instruments-icon{
+                background: url("images/guitar_level.png"), rgba(1, 2, 3, 0.82);
+                background-size: 6vh;
+                background-repeat: no-repeat,no-repeat;
+                background-position: center;
+            }
+            &.material-icon{
+                background: url("images/folder_home.png"), rgba(1, 2, 3, 0.82);
+                background-size: 6vh;
+                background-repeat: no-repeat,no-repeat;
+                background-position: center;
+            }
+            &.top-icon{
+                background: url("images/cloud.png"), rgba(1, 2, 3, 0.82);
+                background-size: 6vh;
+                background-repeat: no-repeat,no-repeat;
+                background-position: center;
+            }
+            &.login-icon{
+                background: url("images/user_male.png"), rgba(1, 2, 3, 0.82);
+                background-size: 6vh;
                 background-repeat: no-repeat,no-repeat;
                 background-position: center;
             }
             &.advanced-icon{
                 background: url("images/advanced.png"), rgba(1, 2, 3, 0.82);
-                background-size: 4vh;
+                background-size: 6vh;
                 background-repeat: no-repeat;
                 background-position: center;
             }

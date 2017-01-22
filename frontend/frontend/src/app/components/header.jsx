@@ -23,7 +23,15 @@ let Header = ({dispatch, searchOn,searchResults}) => {
                 <i className="icon advanced-icon"></i>,
                 popup
             ]) :
-        <i onClick={() => dispatch(turnOnSearch())} className="icon search-icon"></i>;
+    ( [
+        <i onClick={() => dispatch(turnOnSearch())} className="icon search-icon"></i>,
+        <i className="icon search-tab"> <span class="tooltiptext">Search chords</span> </i>,
+        <i className="icon tags-icon"></i>,
+        <i className="icon instruments-icon"></i>,
+        <i className="icon material-icon"></i>,
+        <i className="icon login-icon"></i>
+
+     ]);
     return (
         <header>
             {searchField}

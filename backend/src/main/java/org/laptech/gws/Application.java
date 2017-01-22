@@ -12,7 +12,7 @@ import javax.annotation.PostConstruct;
  * @author rlapin on 12/12/16.
  */
 @SpringBootApplication
-public class Application extends SpringBootServletInitializer {
+public class Application extends SpringBootServletInitializer {npm
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
