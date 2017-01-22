@@ -1,20 +1,20 @@
 package org.laptech.gws.data;
 
+import org.springframework.data.annotation.Id;
+
 import javax.persistence.*;
 import java.util.List;
 
 /**
  * @author rlapin
  */
-@Entity
-@Table(name = "albums")
+
+
 public class Album {
 
     @Id
-    @GeneratedValue
     private long id;
 
-    @OneToMany
     private List<Song> songs;
     private String name;
 

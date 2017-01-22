@@ -26,7 +26,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-       // http.csrf().disable().antMatcher("/api/**").authorizeRequests().anyRequest().hasRole("USER");
+        http.csrf().disable();
     }
 
     @Autowired

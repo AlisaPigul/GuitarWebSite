@@ -1,13 +1,13 @@
 package org.laptech.gws.data;
 
+import org.springframework.data.annotation.Id;
+
 import javax.persistence.*;
 
 /**
  * Group name of chords
  * @author rlapin
  */
-@Entity
-@Table(name = "tags")
 public class Tag {
     @Id
     private String name;

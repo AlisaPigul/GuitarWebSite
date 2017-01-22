@@ -1,14 +1,15 @@
 package org.laptech.gws.data;
 
+import org.springframework.data.annotation.Id;
+
 import javax.persistence.*;
 
 /**
  * @author rlapin
  */
-@Entity
-@Table(name = "genre")
 public class Genre {
     @Id
+    private String id;
     private String name;
 
     public String getName() {
@@ -27,6 +28,13 @@ public class Genre {
         Genre genre = (Genre) o;
 
         return name != null ? name.equals(genre.name) : genre.name == null;
+    }
+
+    @Override
+    public String toString() {
+        return "Genre{" +
+                "name='" + name + '\'' +
+                '}';
     }
 
     @Override

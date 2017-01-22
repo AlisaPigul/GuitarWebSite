@@ -3,6 +3,8 @@ package org.laptech.gws.data;
 
 
 
+import org.springframework.data.annotation.Id;
+
 import javax.persistence.*;
 import java.util.Arrays;
 import java.util.Date;
@@ -10,11 +12,8 @@ import java.util.Date;
 /**
  * @author rlapin on 12/13/16.
  */
-@Entity
-@Table(name = "users")
 public class User {
     @Id
-    @GeneratedValue
     private long id;
 
     private String login;
@@ -25,7 +24,6 @@ public class User {
     public long getId() {
         return id;
     }
-    @Enumerated(EnumType.STRING)
     public Role getRole() {
         return role;
     }
