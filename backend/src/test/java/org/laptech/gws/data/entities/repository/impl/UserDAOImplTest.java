@@ -1,4 +1,4 @@
-package org.laptech.gws.data.repository.impl;
+package org.laptech.gws.data.entities.repository.impl;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

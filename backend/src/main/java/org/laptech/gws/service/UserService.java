@@ -1,6 +1,6 @@
 package org.laptech.gws.service;
 
-import org.laptech.gws.data.User;
+import org.laptech.gws.data.entities.User;
 
 import java.util.List;
 

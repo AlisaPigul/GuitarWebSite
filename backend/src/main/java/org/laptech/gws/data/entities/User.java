@@ -1,13 +1,11 @@
-package org.laptech.gws.data;
+package org.laptech.gws.data.entities;
 
 
 
 
 import org.springframework.data.annotation.Id;
 
-import javax.persistence.*;
 import java.util.Arrays;
-import java.util.Date;
 
 /**
  * @author rlapin on 12/13/16.

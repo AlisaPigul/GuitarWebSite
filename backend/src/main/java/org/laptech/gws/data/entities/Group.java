@@ -1,4 +1,4 @@
-package org.laptech.gws.data;
+package org.laptech.gws.data.entities;
 
 /**
  * @author rlapin on 12/13/16.

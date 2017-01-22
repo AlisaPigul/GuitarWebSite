@@ -1,7 +1,7 @@
 package org.laptech.gws.service.impl;
 
-import org.laptech.gws.data.User;
-import org.laptech.gws.data.repository.UserRepository;
+import org.laptech.gws.data.entities.User;
+import org.laptech.gws.data.entities.repository.UserRepository;
 import org.laptech.gws.exceptions.IncorrectPasswordException;
 import org.laptech.gws.exceptions.UserAlreadyExistsException;
 import org.laptech.gws.exceptions.UserNotExistsException;

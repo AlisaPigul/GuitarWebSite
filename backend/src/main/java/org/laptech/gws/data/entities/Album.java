@@ -1,8 +1,8 @@
-package org.laptech.gws.data;
+package org.laptech.gws.data.entities;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
-import javax.persistence.*;
 import java.util.List;
 
 /**
@@ -14,7 +14,7 @@ public class Album {
 
     @Id
     private long id;
-
+    @DBRef
     private List<Song> songs;
     private String name;
 

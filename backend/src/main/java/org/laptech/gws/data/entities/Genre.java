@@ -1,15 +1,13 @@
-package org.laptech.gws.data;
+package org.laptech.gws.data.entities;
 
 import org.springframework.data.annotation.Id;
 
-import javax.persistence.*;
-
 /**
- * Group name of chords
  * @author rlapin
  */
-public class Tag {
+public class Genre {
     @Id
+    private String id;
     private String name;
 
     public String getName() {
@@ -25,9 +23,16 @@ public class Tag {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Tag tag = (Tag) o;
+        Genre genre = (Genre) o;
 
-        return name != null ? name.equals(tag.name) : tag.name == null;
+        return name != null ? name.equals(genre.name) : genre.name == null;
+    }
+
+    @Override
+    public String toString() {
+        return "Genre{" +
+                "name='" + name + '\'' +
+                '}';
     }
 
     @Override

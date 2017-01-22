@@ -1,4 +1,4 @@
-package org.laptech.gws.data;
+package org.laptech.gws.data.entities;
 
 
 /**

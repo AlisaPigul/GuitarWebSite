@@ -1,12 +1,10 @@
-package org.laptech.gws.data.repository;
+package org.laptech.gws.data.entities.repository;
 
-import org.laptech.gws.data.User;
+import org.laptech.gws.data.entities.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * UserDAO

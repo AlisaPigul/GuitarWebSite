@@ -2,14 +2,10 @@ package org.laptech.gws.utils;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import org.laptech.gws.data.User;
+import org.laptech.gws.data.entities.User;
 import org.laptech.gws.exceptions.ApplicationException;
 
 import java.io.UnsupportedEncodingException;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZoneOffset;
-import java.util.Date;
 
 /**
  * @author rlapin

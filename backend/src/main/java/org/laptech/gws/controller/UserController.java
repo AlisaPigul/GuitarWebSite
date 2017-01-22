@@ -1,9 +1,8 @@
 package org.laptech.gws.controller;
 
-import org.laptech.gws.data.User;
+import org.laptech.gws.data.entities.User;
 import org.laptech.gws.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

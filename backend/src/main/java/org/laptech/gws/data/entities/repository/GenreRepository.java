@@ -1,9 +1,7 @@
-package org.laptech.gws.data.repository;
+package org.laptech.gws.data.entities.repository;
 
-import org.laptech.gws.data.Chords;
-import org.laptech.gws.data.Genre;
+import org.laptech.gws.data.entities.Genre;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.repository.CrudRepository;
 
 /**
  * @author rlapin

@@ -1,6 +1,6 @@
-package org.laptech.gws.data.repository;
+package org.laptech.gws.data.entities.repository;
 
-import org.laptech.gws.data.Chords;
+import org.laptech.gws.data.entities.Chords;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.security.access.prepost.PreAuthorize;
