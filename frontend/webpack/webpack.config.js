@@ -9,7 +9,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     devtool: debug ? "inline-sourcemap" : null,
 
-    entry: {"app": "./frontend/src/app/app.jsx"},
+    entry: {"app": "./frontend/src/app/app.jsx"
+    , "styles": "./frontend/src/public/styles/index.scss"},
     module: {
         loaders: [
             {
@@ -23,17 +24,14 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract(
-                    'style', // The backup style loader
-                    'css?sourceMap!sass?sourceMap'
-                )
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader!resolve-url!sass-loader?sourceMap')
             },
             {test: /\.png$/, exclude: /node_modules/, loader: "url-loader?limit=100000"},
             {test: /\.jpg$/, exclude: /node_modules/, loader: "file-loader"}
         ]
     },
     resolve: {
-        extensions: ['', '.jsx', '.js','.css','.scss']
+        extensions: ['', '.jsx', '.js', '.css', '.scss']
     },
     publicPath: '',
     output: {
@@ -58,14 +56,16 @@ module.exports = {
             'process.env': {
                 'NODE_ENV': JSON.stringify('production')
             }
-        }),new ExtractTextPlugin("./frontend/src/public/styles/bundle.css")] : [
+        }),  new ExtractTextPlugin('styles.css', {
+            allChunks: true
+        })] : [
 
             new webpack.NoErrorPlugin(),
             new webpack.optimize.DedupePlugin(),
             new webpack.optimize.OccurenceOrderPlugin(),
-
             new webpack.optimize.UglifyJsPlugin({mangle: false, sourcemap: false})
-
-            ,new ExtractTextPlugin("./frontend/src/public/styles/bundle.css")],
+            ,  new ExtractTextPlugin('styles.css', {
+                allChunks: true
+            })],
 };
 

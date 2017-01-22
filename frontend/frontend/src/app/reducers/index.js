@@ -1,5 +1,6 @@
 import {combineReducers} from "redux";
-import {loginState} from "./login";
+import {loginState} from "./loginReducer";
+import {searchState} from "./searchReducer";
 /**
  * @author rlapin
  */
@@ -10,5 +11,5 @@ import {loginState} from "./login";
 
 
 export const appReducer = combineReducers({
-   loginState
+   loginState,searchState
 });

@@ -1,5 +1,5 @@
 import React from "react";
-import {hideLogin, login} from "../actions/loginActions";
+import {login} from "../actions";
 import {browserHistory} from "react-router";
 import {connect} from "react-redux";
 

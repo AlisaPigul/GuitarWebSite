@@ -1,4 +1,4 @@
-import {LOGIN_SUCCESS, LOGOUT} from "../constants/loginConstants";
+import {LOGOUT, LOGIN_SUCCESS} from "../constants"
 /**
  * @author rlapin
  */
