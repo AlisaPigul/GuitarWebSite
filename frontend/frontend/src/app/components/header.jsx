@@ -3,50 +3,65 @@ import React from "react";
 import {connect} from "react-redux";
 import {turnOnSearch, turnOffSearch,searchStart} from "../actions/";
 
+//statless components
+import {Icon} from "./stateless/icon.component";
+import {push} from "react-router-redux";
 
 /**
  * @author rlapin
  */
 
-let Header = ({dispatch, searchOn,searchResults}) => {
-    let popup = (searchResults && searchResults.length>0)?<div className="popup">{searchResults}</div>:"";
-
-    function onSearchChange(event) {
-        debugger
-        dispatch(searchStart(event.target.value));
+const Icons = [{img:"music_note.png",tooltip:"Search chords",url:"chords"},
+    {img:"golden_star.png",tooltip:"Search tags",url:"tags"},
+    {img:"guitar_level.png",tooltip:"Guitar level",url:"level"},
+    {img:"folder_home.png",tooltip:"Materials",url:"materials"},
+    {img:"cloud.png",tooltip:"Top chords",url:"top"},
+    {img:"user_male.png",tooltip:"Login",url:"login"},
+];
+@connect(state=>({
+    auth: state.loginState.auth,
+    searchResults: state.searchState.results,
+}))
+class Header extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {searchOn: false};
     }
 
-    let searchField = searchOn ? (
-            [
-                <input onChange={(event)=>onSearchChange(event)} className='search-field' type="text"/>,
-                <i onClick={() => dispatch(turnOffSearch())} className="icon search-icon"></i>,
-                <i className="icon advanced-icon"></i>,
-                popup
-            ]) :
-    ( [
-        <i onClick={() => dispatch(turnOnSearch())} className="icon search-icon"></i>,
-        <i className="icon search-tab"> <span class="tooltiptext">Search chords</span> </i>,
-        <i className="icon tags-icon"></i>,
-        <i className="icon instruments-icon"></i>,
-        <i className="icon material-icon"></i>,
-        <i className="icon login-icon"></i>
+    render() {
+        const searchResults = this.props.searchResults;
+        const searchOn = this.state.searchOn;
+        const dispatch = this.props.dispatch;
+        let popup = (searchResults && searchResults.length > 0) ? <div className="popup">{searchResults}</div> : "";
 
-     ]);
-    return (
-        <header>
-            {searchField}
+        function onSearchChange(event) {
+            this.dispatch(searchStart(event.target.value));
+        }
+
+        let searchField = searchOn ? (
+                [
+                    <input onChange={(event) => onSearchChange(event)} className='search-field' type="text"/>,
+
+                    <Icon onClick={() => this.setState({searchOn: false})} img="search.png"
+                          tooltip="Turn off search"></Icon>,
+                    <Icon onClick={() => 0} tooltip="Show advanced search" img="advanced.png"></Icon>,
+                    popup
+                ]) :
+            ( [
+                <Icon onClick={() => this.setState({searchOn: true})} img="search.png" tooltip="Turn on search"></Icon>,
+                Icons.map(v=>{
+                    return   <Icon onClick={()=>this.props.dispatch(push(v.url))} img={v.img} tooltip={v.tooltip}/>
+                        })
+
+            ]);
+        return (
+            <header>
+                {searchField}
 
 
-        </header>
-    )
+            </header>
+        )
+    }
 };
-function mapStateToProps(state) {
-    return {
-        auth: state.loginState.auth,
-        searchOn: state.searchState.on,
-        searchResults: state.searchState.results
-    }
-}
 
-Header = connect(mapStateToProps)(Header);
 export default Header;

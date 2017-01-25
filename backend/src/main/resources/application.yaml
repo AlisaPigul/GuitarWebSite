@@ -6,3 +6,5 @@ spring:
       database: gws
       host: localhost
       port: 27017
+    solr:
+      host: http://localhost:8983/solr

@@ -13,7 +13,6 @@ const DEFAULT_STATE = {
 
 
 export function searchState(state = DEFAULT_STATE, action){
-    debugger;
     switch(action.type){
         case SEARCH_ON:
             return Object.assign({},state,{on:true});

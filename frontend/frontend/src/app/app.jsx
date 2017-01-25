@@ -10,8 +10,6 @@ import {appReducer} from "./reducers";
 import configureStore from "./store/configureStore"
 import {Provider} from 'react-redux';
 import {Router, Route, Redirect, IndexRoute, browserHistory, hashHistory} from "react-router";
-import {showLogin} from "./actions/loginActions";
-import {PatentAddition} from "./components/patentAddition";
 import {connect} from "react-redux";
 
 
@@ -62,7 +60,6 @@ ReactDOM.render(
                 <Route path="query" component={QueryComponent}/>
                 <Route path="about" component={AboutComponent}/>
                 <Route path="login" component={LoginForm}/>
-                <Route path="patent" component={PatentAddition}/>
                 <Route path="*" component={TestComponent}/>
             </Route>
 

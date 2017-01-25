@@ -78,89 +78,43 @@ body{
             width:9vh;
             height:9vh;
             cursor: pointer;
+            background-size: 6vh;
+            position: relative;
+            display: inline-block;
+            .tooltip {
+                visibility: hidden;
+                width: 120px;
+                background-color: #555;
+                color: #fff;
+                text-align: center;
+                border-radius: 6px;
+                padding: 3vh 0;
+                line-height:3vh;
+                left:-30%;
+                position: absolute;
+                z-index: 999;
+                bottom: -100%;
 
-            &.search-icon{
-                background: url("images/search.png"), rgba(1, 2, 3, 0.82);
-                background-size: 6vh;
-                background-repeat: no-repeat,no-repeat;
-                background-position: center;
+
+                opacity: 0;
+                transition: opacity 1s;
             }
-            &.search-tab{
-                background: url("images/music_note.png"), rgba(1, 2, 3, 0.82);
-                background-size: 6vh;
-                background-repeat: no-repeat,no-repeat;
-                background-position: center;
-                position: relative;
-                display: inline-block;
 
-                .tooltiptext {
-                    visibility: hidden;
-                    width: 120px;
-                    background-color: #555;
-                    color: #fff;
-                    text-align: center;
-                    border-radius: 6px;
-                    padding: 5px 0;
-                    position: absolute;
-                    z-index: 1;
-                    bottom: 125%;
-                    left: 50%;
-                    margin-left: -60px;
-                    opacity: 0;
-                    transition: opacity 1s;
-                }
-
-                .tooltiptext::after {
-                    content: "";
-                    position: absolute;
-                    top: 100%;
-                    left: 50%;
-                    margin-left: -5px;
-                    border-width: 5px;
-                    border-style: solid;
-                    border-color: #555 transparent transparent transparent;
-                }
+            .tooltip::after {
+                content: "";
+                position: absolute;
+                top: -1.9vh;
+                left: 50%;
+                margin-left: -0.5vh;
+                border-width: 1vh;
+                border-style: solid;
+                border-color: transparent transparent #555 transparent;
             }
-            &.search-tab:hover .tooltiptext {
+            &:hover .tooltip{
                 visibility: visible;
-                opacity: 1;
+                opacity:1;
             }
-            &.tags-icon{
-                background: url("images/golden_star.png"), rgba(1, 2, 3, 0.82);
-                background-size: 6vh;
-                background-repeat: no-repeat,no-repeat;
-                background-position: center;
-            }
-            &.instruments-icon{
-                background: url("images/guitar_level.png"), rgba(1, 2, 3, 0.82);
-                background-size: 6vh;
-                background-repeat: no-repeat,no-repeat;
-                background-position: center;
-            }
-            &.material-icon{
-                background: url("images/folder_home.png"), rgba(1, 2, 3, 0.82);
-                background-size: 6vh;
-                background-repeat: no-repeat,no-repeat;
-                background-position: center;
-            }
-            &.top-icon{
-                background: url("images/cloud.png"), rgba(1, 2, 3, 0.82);
-                background-size: 6vh;
-                background-repeat: no-repeat,no-repeat;
-                background-position: center;
-            }
-            &.login-icon{
-                background: url("images/user_male.png"), rgba(1, 2, 3, 0.82);
-                background-size: 6vh;
-                background-repeat: no-repeat,no-repeat;
-                background-position: center;
-            }
-            &.advanced-icon{
-                background: url("images/advanced.png"), rgba(1, 2, 3, 0.82);
-                background-size: 6vh;
-                background-repeat: no-repeat;
-                background-position: center;
-            }
+
         }
 
 

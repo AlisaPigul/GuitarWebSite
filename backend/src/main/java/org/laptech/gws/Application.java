@@ -4,8 +4,10 @@ import org.bson.types.ObjectId;
 import org.laptech.gws.data.*;
 import org.laptech.gws.data.entities.Chords;
 import org.laptech.gws.data.entities.Genre;
+import org.laptech.gws.data.entities.Product;
 import org.laptech.gws.data.entities.repository.ChordsRepository;
 import org.laptech.gws.data.entities.repository.GenreRepository;
+import org.laptech.gws.data.entities.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -22,7 +24,7 @@ import java.util.List;
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer implements CommandLineRunner{
     @Autowired
-    ChordsRepository repository;
+    ProductRepository repository;
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
         return builder.sources(Application.class);
@@ -35,8 +37,9 @@ public class Application extends SpringBootServletInitializer implements Command
 
     @Override
     public void run(String... strings) throws Exception {
-        Chords chords = new Chords();
-
-        repository.save(chords);
+        repository.deleteAll();/*
+        Product product = new Product();
+        product.setName("Hello");
+        repository.save(product);*/
     }
 }
