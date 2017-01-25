@@ -35,7 +35,7 @@ class Header extends React.Component {
         let popup = (searchResults && searchResults.length > 0) ? <div className="popup">{searchResults}</div> : "";
 
         function onSearchChange(event) {
-            this.dispatch(searchStart(event.target.value));
+            dispatch(searchStart(event.target.value));
         }
 
         let searchField = searchOn ? (
@@ -50,7 +50,7 @@ class Header extends React.Component {
             ( [
                 <Icon onClick={() => this.setState({searchOn: true})} img="search.png" tooltip="Turn on search"></Icon>,
                 Icons.map(v=>{
-                    return   <Icon onClick={()=>this.props.dispatch(push(v.url))} img={v.img} tooltip={v.tooltip}/>
+                    return   <Icon onClick={()=>this.props.dispatch(push("/"+v.url))} img={v.img} tooltip={v.tooltip}/>
                         })
 
             ]);

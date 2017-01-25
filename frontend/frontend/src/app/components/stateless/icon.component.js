@@ -13,7 +13,6 @@ import {getImagePath} from "../../utils/path";
 
 
 export const Icon = ({onClick, tooltip, img}) => {
-    debugger
 
     const divStyle = img && {
             backgroundImage: `url(${getImagePath(img)})`,

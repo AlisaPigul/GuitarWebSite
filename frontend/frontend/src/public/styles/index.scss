@@ -58,7 +58,8 @@ body{
         flex-direction: row;
         flex-grow: 0;
         align-items: center;
-        background: #000;
+        background: rgba(68, 68, 68, 0.33);
+        box-shadow: 0.5vh 1vh rgba(0, 0, 0, 0.59);
         justify-content: flex-end;
         height:9vh;
         .search-field{
@@ -83,7 +84,7 @@ body{
             background-size: 6vh;
             position: relative;
             display: inline-block;
-            .tooltip {
+            .tooltip{
                 visibility: hidden;
                 width: $tooltipSize;
                 background-color: #555;

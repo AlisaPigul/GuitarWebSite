@@ -5,7 +5,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {LoginForm, AboutComponent, QueryComponent, Header} from "./components";
 import DevTools from "./components/devTools";
-import {syncHistoryWithStore} from "react-router-redux";
+import {syncHistoryWithStore, push} from "react-router-redux";
 import configureStore from "./store/configureStore";
 import {Provider, connect} from "react-redux";
 import {Router, Route, browserHistory} from "react-router";
