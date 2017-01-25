@@ -1,6 +1,8 @@
 import {combineReducers} from "redux";
 import {loginState} from "./loginReducer";
 import {searchState} from "./searchReducer";
+import {routerReducer} from "react-router-redux";
+
 /**
  * @author rlapin
  */
@@ -12,4 +14,5 @@ import {searchState} from "./searchReducer";
 
 export const appReducer = combineReducers({
    loginState,searchState
+    ,  routing: routerReducer
 });

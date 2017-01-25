@@ -3,19 +3,18 @@
  */
 import React from "react";
 import ReactDOM from "react-dom";
-import {LoginForm, AboutComponent, QueryComponent,Header} from "./components";
+import {LoginForm, AboutComponent, QueryComponent, Header} from "./components";
 import DevTools from "./components/devTools";
-import {createStore} from "redux";
-import {appReducer} from "./reducers";
-import configureStore from "./store/configureStore"
-import {Provider} from 'react-redux';
-import {Router, Route, Redirect, IndexRoute, browserHistory, hashHistory} from "react-router";
-import {connect} from "react-redux";
+import {syncHistoryWithStore} from "react-router-redux";
+import configureStore from "./store/configureStore";
+import {Provider, connect} from "react-redux";
+import {Router, Route, browserHistory} from "react-router";
 
 
 const isProduction = true;
-
+// Create an enhanced history that syncs navigation events with the store
 let store = configureStore();
+const history = syncHistoryWithStore(browserHistory, store);
 @connect(state=> ({
     auth: state.loginState.auth
 }))
@@ -55,7 +54,7 @@ class TestComponent extends React.Component {
 const app = document.getElementById('app');
 ReactDOM.render(
     <Provider store={store}>
-        <Router history={browserHistory}>
+        <Router history={history}>
             <Route path="/" component={App}>
                 <Route path="query" component={QueryComponent}/>
                 <Route path="about" component={AboutComponent}/>
