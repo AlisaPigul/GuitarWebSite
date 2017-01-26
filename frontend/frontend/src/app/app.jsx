@@ -9,6 +9,7 @@ import {syncHistoryWithStore, push} from "react-router-redux";
 import configureStore from "./store/configureStore";
 import {Provider, connect} from "react-redux";
 import {Router, Route, browserHistory} from "react-router";
+import {LoginScreen, ChordsScreen, LevelsScreen, MaterialsScreen, TopsScreen, TagsScreen} from "./components/screens";
 
 
 const isProduction = true;
@@ -56,9 +57,12 @@ ReactDOM.render(
     <Provider store={store}>
         <Router history={history}>
             <Route path="/" component={App}>
-                <Route path="query" component={QueryComponent}/>
-                <Route path="about" component={AboutComponent}/>
-                <Route path="login" component={LoginForm}/>
+                <Route path="chords" component={ChordsScreen}/>
+                <Route path="tags" component={TagsScreen}/>
+                <Route path="levels" component={LevelsScreen}/>
+                <Route path="materials" component={MaterialsScreen}/>
+                <Route path="tops" component={TopsScreen}/>
+                <Route path="login" component={LoginScreen}/>
                 <Route path="*" component={TestComponent}/>
             </Route>
 

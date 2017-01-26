@@ -13,9 +13,9 @@ import {push} from "react-router-redux";
 
 const Icons = [{img:"music_note.png",tooltip:"Search chords",url:"chords"},
     {img:"golden_star.png",tooltip:"Search tags",url:"tags"},
-    {img:"guitar_level.png",tooltip:"Guitar level",url:"level"},
+    {img:"guitar_level.png",tooltip:"Guitar level",url:"levels"},
     {img:"folder_home.png",tooltip:"Materials",url:"materials"},
-    {img:"cloud.png",tooltip:"Top chords",url:"top"},
+    {img:"cloud.png",tooltip:"Top chords",url:"tops"},
     {img:"user_male.png",tooltip:"Login",url:"login"},
 ];
 @connect(state=>({
