@@ -39,6 +39,12 @@ body{
         height:100px;
         flex-grow:0;
     }
+    content{
+        color: #999;
+        display: block;
+        margin-top: 11vh;
+        background: rgb(37, 37, 37);
+    }
     header{
         .popup{
             position: absolute;

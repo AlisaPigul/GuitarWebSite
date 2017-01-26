@@ -4,6 +4,7 @@
  */
 import {SEARCH_ON,SEARCH_OFF,SEARCH_END} from "./searchConstants";
 import {LOGIN,LOGIN_SUCCESS,LOGOUT} from "./loginConstants";
+import {CHANGE_LOCALE,GET_DICTIONARY,ENG,GER,RUS} from "./i18nConstants"
 
 
 

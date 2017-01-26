@@ -10,12 +10,17 @@ import configureStore from "./store/configureStore";
 import {Provider, connect} from "react-redux";
 import {Router, Route, browserHistory} from "react-router";
 import {LoginScreen, ChordsScreen, LevelsScreen, MaterialsScreen, TopsScreen, TagsScreen} from "./components/screens";
+import {changeLocale} from "./actions/i18Actions";
+import {ENG} from "./constants/i18nConstants";
 
 
 const isProduction = true;
 // Create an enhanced history that syncs navigation events with the store
+
 let store = configureStore();
 const history = syncHistoryWithStore(browserHistory, store);
+store.dispatch(changeLocale(ENG))
+
 @connect(state=> ({
     auth: state.loginState.auth
 }))
