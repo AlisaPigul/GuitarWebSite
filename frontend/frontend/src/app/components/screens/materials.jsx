@@ -11,7 +11,10 @@ export class MaterialsScreen extends React.Component{
 
     render(){
         return (
-            <div></div>
+
+            <content>
+
+            </content>
         )
     }
 

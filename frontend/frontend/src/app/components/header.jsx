@@ -22,7 +22,7 @@ const Icons = [{img:"music_note.png",tooltip:"Search chords",url:"chords"},
     auth: state.loginState.auth,
     searchResults: state.searchState.results,
 }))
-class Header extends React.Component {
+export class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = {searchOn: false};
@@ -64,4 +64,3 @@ class Header extends React.Component {
     }
 };
 
-export default Header;

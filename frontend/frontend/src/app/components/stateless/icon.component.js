@@ -7,6 +7,7 @@ import {getImagePath} from "../../utils/path";
  * 2) tooltip - text
  * Output:
  * 1) onclick - fires when user click the icon
+ * Css: use className <i>.icon</i> for icon itself and className <i>.tooltip</i> for icon tooltip
  * @author rlapin
  */
 
@@ -22,7 +23,7 @@ export const Icon = ({onClick, tooltip, img}) => {
     ;
     return (
         <i onClick={(event) => onClick(event)} style={divStyle} className="icon">
-            <span className="tooltip">{tooltip}</span>
+            {tooltip && <span className="tooltip">{tooltip}</span>}
         </i>
     )
 };

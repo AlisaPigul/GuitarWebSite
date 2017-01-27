@@ -10,7 +10,10 @@ export class LoginScreen extends React.Component{
 
     render(){
         return (
-            <div></div>
+
+            <content>
+
+            </content>
         )
     }
 

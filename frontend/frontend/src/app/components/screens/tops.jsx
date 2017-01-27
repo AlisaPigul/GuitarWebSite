@@ -10,7 +10,10 @@ export class TopsScreen extends React.Component{
 
     render(){
         return (
-            <div></div>
+
+            <content>
+
+            </content>
         )
     }
 

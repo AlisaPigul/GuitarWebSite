@@ -1,7 +1,7 @@
 /**
  * @author rlapin
  */
-import {ENG,CHANGE_LOCALE,GET_DICTIONARY} from "../constants/i18nConstants";
+import {ENG,CHANGE_LOCALE,GET_DICTIONARY, RUS} from "../constants/i18nConstants";
 
 
 
@@ -9,6 +9,7 @@ import {ENG,CHANGE_LOCALE,GET_DICTIONARY} from "../constants/i18nConstants";
 const DEFAULT_STATE = {
     locale: ENG,
     dict: {},
+    locales: [ENG,RUS]
 };
 
 

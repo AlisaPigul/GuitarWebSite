@@ -10,7 +10,9 @@ export class LevelsScreen extends React.Component{
 
     render(){
         return (
-            <div></div>
+            <content>
+
+            </content>
         )
     }
 

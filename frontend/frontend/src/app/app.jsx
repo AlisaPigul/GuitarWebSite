@@ -3,7 +3,7 @@
  */
 import React from "react";
 import ReactDOM from "react-dom";
-import {LoginForm, AboutComponent, QueryComponent, Header} from "./components";
+import {LoginForm, AboutComponent, QueryComponent, Header,Footer} from "./components";
 import DevTools from "./components/devTools";
 import {syncHistoryWithStore, push} from "react-router-redux";
 import configureStore from "./store/configureStore";
@@ -40,6 +40,7 @@ class App extends React.Component {
                 <div>
                     <Header/>
                     {this.props.children}
+                    <Footer/>
                 </div>
                 <div>
                     <DevTools/>
