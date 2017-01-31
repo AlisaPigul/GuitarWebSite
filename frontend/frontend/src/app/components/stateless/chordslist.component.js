@@ -1,5 +1,6 @@
 import {ChordsItem} from './chordsitem.component'
 import React from "react";
+import {connect} from "react-redux";
 /**
  * @author rlapin
  */
@@ -7,9 +8,9 @@ import React from "react";
 
 
 
-export const ChordsList = ({items}) => {
+let ChordsList = ({items,dispatch}) => {
 
-
+    debugger;
     return (
         <table>
             <thead>
@@ -24,6 +25,13 @@ export const ChordsList = ({items}) => {
             {items && items.map(v => <ChordsItem/>)}
             </tbody>
 
-            </table >
-                )
-            };
+        </table >
+    )
+};
+const mapStateToProps =(state)=>{
+    return {
+        dict: state.i18nState.dict
+    }
+};
+ChordsList = connect(mapStateToProps)(ChordsList);
+export default ChordsList;

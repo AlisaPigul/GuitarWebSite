@@ -1,5 +1,5 @@
 import React from "react";
-import {ChordsList} from '../stateless/chordslist.component'
+import ChordsList from '../stateless/chordslist.component'
 /**
  * @author rlapin
  */
