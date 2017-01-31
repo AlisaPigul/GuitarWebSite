@@ -8,18 +8,18 @@ import {connect} from "react-redux";
 
 
 
-let ChordsList = ({items,dispatch}) => {
+let ChordsList = ({items,dispatch,dict}) => {
 
     debugger;
     return (
         <table>
             <thead>
-            <th>Исполнитель</th>
-            <th>Песня</th>
-            <th>Сложность</th>
-            <th>Строй</th>
-            <th>Рейтинг</th>
-            <th>Просмотров</th>
+            <th>{dict.ARTISTS}</th>
+            <th>{dict.SONGS}</th>
+            <th>{dict.DIFFICULTY}</th>
+            <th>{dict.TUNING}</th>
+            <th>{dict.RATING}</th>
+            <th>{dict.VIEWS}</th>
             </thead>
             <tbody>
             {items && items.map(v => <ChordsItem/>)}
