@@ -16,7 +16,7 @@ export const RUS_DICT = {
     ARTISTS: 'Исполнители',
     SONGS: 'Песни',
     DIFFICULTY: 'Сложность',
-    TUNING: 'Тюнинг',
+    TUNING: 'Строй',
     RATING: 'Рейтинг',
     VIEWS: 'Просмотры'
 };

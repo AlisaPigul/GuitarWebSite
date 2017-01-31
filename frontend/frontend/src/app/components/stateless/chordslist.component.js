@@ -10,16 +10,15 @@ import {connect} from "react-redux";
 
 let ChordsList = ({items,dispatch,dict}) => {
 
-    debugger;
     return (
         <table>
             <thead>
-            <th>{dict.ARTISTS}</th>
-            <th>{dict.SONGS}</th>
-            <th>{dict.DIFFICULTY}</th>
-            <th>{dict.TUNING}</th>
-            <th>{dict.RATING}</th>
-            <th>{dict.VIEWS}</th>
+            <th className="artists-column">{dict.ARTISTS}</th>
+            <th className="songs-column">{dict.SONGS}</th>
+            <th className="difficulty-column">{dict.DIFFICULTY}</th>
+            <th className="tuning-column">{dict.TUNING}</th>
+            <th className="rating-column">{dict.RATING}</th>
+            <th className="views-column">{dict.VIEWS}</th>
             </thead>
             <tbody>
             {items && items.map(v => <ChordsItem/>)}

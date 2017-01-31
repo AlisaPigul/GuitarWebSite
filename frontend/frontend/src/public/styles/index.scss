@@ -26,7 +26,7 @@ body{
     background-size: 50% 50%, 100% 100%;
     background-repeat: no-repeat,repeat;
     background-image: url('images/bg.jpg'),linear-gradient(to top,#000000 0% ,#000000 50% , rgba(0, 0, 0, 0.9) 100% );
-
+    font-size: 1.4vmin;
     padding-left: 5vw;
     padding-right: 5vw;
     display:flex;
@@ -104,23 +104,43 @@ body{
         &.chords-list{
             table{
                 width:100%;
-                background: ghostwhite;
-                color:green;
+                background: #252525;
+                color:#fff;
+                table-layout: fixed;
             }
             tbody {
                 tr:nth-child(odd) {
-                    background: #000;
+                    background: #181921
+
+                }
+                tr:nth-child(even) {
+                    background: #181921;
 
                 }
                 tr {
                     height: 5vh;
                 }
                 td {
+                    vertical-align: middle;
                     padding-left: 1vw;
+                }
+                td:nth-child(n+3){
+                    text-align: center;
                 }
             }
             thead{
+                font-size: 1.2em;
                 text-align: center;
+                .artists-column{
+                    width: 30vw;
+                }
+                .songs-column{
+                    width: 30vw;
+                }
+                th:nth-child(n+3){
+                    text-align: center;
+                }
+
             }
         }
     }
